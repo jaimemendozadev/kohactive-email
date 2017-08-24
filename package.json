@@ -4,17 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "build": "./node_modules/.bin/webpack -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mailgun-js": "^0.13.1",
     "node-ses": "^2.0.5",
     "nodemon": "^1.11.0",
-    "sparkpost": "^2.1.2"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "sparkpost": "^2.1.2",
+    "webpack": "^3.5.5"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }
