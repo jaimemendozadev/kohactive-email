@@ -1,14 +1,18 @@
 import React from 'react';
-import {Row, Input} from 'react-materialize';
+import {Row, Input, Button} from 'react-materialize';
 
 var Form = () => {
+  function handleSubmit(event){
+    console.log("the event is ", event)
+  }
   return(
-    <Row>
-	  <Input placeholder="Placeholder" s={6} label="First Name" />
-	  <Input s={6} label="Last Name" />
-	  <Input s={12} label="disabled" defaultValue="I am not editable" disabled />
-	  <Input type="password" label="password" s={12} />
-	  <Input type="email" label="Email" s={12} />
+    <Row onSubmit={handleSubmit}>
+	  <Input placeholder="someone@their-email.com" s={6} type="email" label="To" />
+      <Input placeholder="Your Name" s={6} label="From" />
+	  <Input placeholder="Subject" s={12} label="Subject" />
+      
+	  <Input placeholder="Enter Your Message Here" s={12} type="textarea" label="Content" />
+      <button type="submit">Submit</button>
     </Row>
   )
 }

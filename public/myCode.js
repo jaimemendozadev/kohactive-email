@@ -9768,10 +9768,19 @@ var App = function (_Component) {
   function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.handleSend = _this.handleSend.bind(_this);
+
+    return _this;
   }
 
   _createClass(App, [{
+    key: 'handleSend',
+    value: function handleSend(event) {
+      console.log("the event is ", event);
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -9782,7 +9791,22 @@ var App = function (_Component) {
           null,
           'SimplySendIt!'
         ),
-        _react2.default.createElement(_form2.default, null)
+        _react2.default.createElement(
+          'p',
+          null,
+          'SimplySendIt is a simple app that allows you to send an email to anyone in the world!'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'You don\'t even need to signup for an email account. We\'ll send the message on your behalf using our custom domain!'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'We just need the recepient email, the subject of the message, and the message you want to send!'
+        ),
+        _react2.default.createElement(_form2.default, { callBack: this.handleSend })
       );
     }
   }]);
@@ -23350,7 +23374,7 @@ exports.default = PaginationButton;
 
 
 Object.defineProperty(exports, "__esModule", {
-		value: true
+  value: true
 });
 
 var _react = __webpack_require__(82);
@@ -23362,15 +23386,22 @@ var _reactMaterialize = __webpack_require__(197);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Form = function Form() {
-		return _react2.default.createElement(
-				_reactMaterialize.Row,
-				null,
-				_react2.default.createElement(_reactMaterialize.Input, { placeholder: 'Placeholder', s: 6, label: 'First Name' }),
-				_react2.default.createElement(_reactMaterialize.Input, { s: 6, label: 'Last Name' }),
-				_react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'disabled', defaultValue: 'I am not editable', disabled: true }),
-				_react2.default.createElement(_reactMaterialize.Input, { type: 'password', label: 'password', s: 12 }),
-				_react2.default.createElement(_reactMaterialize.Input, { type: 'email', label: 'Email', s: 12 })
-		);
+  function handleSubmit(event) {
+    console.log("the event is ", event);
+  }
+  return _react2.default.createElement(
+    _reactMaterialize.Row,
+    { onSubmit: handleSubmit },
+    _react2.default.createElement(_reactMaterialize.Input, { placeholder: 'someone@their-email.com', s: 6, type: 'email', label: 'To' }),
+    _react2.default.createElement(_reactMaterialize.Input, { placeholder: 'Your Name', s: 6, label: 'From' }),
+    _react2.default.createElement(_reactMaterialize.Input, { placeholder: 'Subject', s: 12, label: 'Subject' }),
+    _react2.default.createElement(_reactMaterialize.Input, { placeholder: 'Enter Your Message Here', s: 12, type: 'textarea', label: 'Content' }),
+    _react2.default.createElement(
+      'button',
+      { type: 'submit' },
+      'Submit'
+    )
+  );
 };
 
 exports.default = Form;
