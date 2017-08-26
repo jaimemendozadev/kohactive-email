@@ -24,6 +24,7 @@
     "nodemon": "^1.11.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-materialize": "^1.0.10",
     "sparkpost": "^2.1.2",
     "webpack": "^3.5.5"
   },
