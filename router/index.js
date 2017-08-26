@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   res.send('Hit the API!');
 });
 
-router.post('/email', mailers.sparkPost);
+router.post('/email', mailers.mailGun);
 
 // router.post('/email', (req, res) => {
 //   console.log("req.body is ", req.body);

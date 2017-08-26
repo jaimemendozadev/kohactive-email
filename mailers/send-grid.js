@@ -1,3 +1,4 @@
+/*
 var helper = require('sendgrid').mail;
 
 
@@ -37,4 +38,6 @@ var viaSendGrid = (req, res)=> {
 }
 
 module.exports = viaSendGrid;
+
+*/
 
