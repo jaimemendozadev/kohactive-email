@@ -17,7 +17,13 @@ const viaMailGun = (req, res)=> {
     subject: subject,
     text: content
   };
+
+  console.log("preformatted data in MailGun is ", data);
+
+
+  res.send("successfully hit MailGun controller");
    
+  /*
   mailgun.messages().send(data, (error, body) => {
     if(error){
       console.log("There was an error sending the message via Mailgun ", error);
@@ -28,6 +34,9 @@ const viaMailGun = (req, res)=> {
     res.send("Message successfully sent.");
     
   });
+
+  */
+
 
 
     

@@ -1,20 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Row, Input, Button} from 'react-materialize';
+import utils from './utils/index.jsx';
 
-var Form = () => {
-  function handleSubmit(event){
-    console.log("the event is ", event)
+class Form extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      fromEmail: '',
+      toEmail: '',
+      subject: '',
+      content: ''
+    }
+  }  
+
+  render(){
+    return(
+      <form onSubmit={utils.handleSubmit.bind(this)}>
+        <Row>
+          <Input onChange={utils.sentBy.bind(this)} value={this.state.fromEmail} s={6} label="From" />
+
+  	      <Input onChange={utils.sendTo.bind(this)}  value={this.state.toEmail} s={6} type="email" label="To" />
+             
+
+  	      <Input onChange={utils.subjectLine.bind(this)} value={this.state.subject} s={12} label="Subject" />
+            
+  	      <Input onChange={utils.content.bind(this)} value={this.state.content} s={12} type="textarea" label="Content" />
+
+          <Button waves='light' type="submit">Submit</Button>
+        </Row>
+      </form>
+    )
   }
-  return(
-    <Row onSubmit={handleSubmit}>
-	  <Input placeholder="someone@their-email.com" s={6} type="email" label="To" />
-      <Input placeholder="Your Name" s={6} label="From" />
-	  <Input placeholder="Subject" s={12} label="Subject" />
-      
-	  <Input placeholder="Enter Your Message Here" s={12} type="textarea" label="Content" />
-      <button type="submit">Submit</button>
-    </Row>
-  )
 }
 
 export default Form;
