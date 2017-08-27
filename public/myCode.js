@@ -9796,6 +9796,11 @@ var App = function App() {
       ' field and we\'ll handle the rest!'
     ),
     _react2.default.createElement(
+      'p',
+      null,
+      'And in case the receipient is wondering why the email never got delivered. Remind them to check their Spam folder.'
+    ),
+    _react2.default.createElement(
       'div',
       { style: style.form },
       _react2.default.createElement(_form2.default, null)

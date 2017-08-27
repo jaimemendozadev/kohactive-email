@@ -21,6 +21,8 @@ const App = () => {
 
       <p>All you have to do is enter your name in the <em>From</em> field and we'll handle the rest!</p>
 
+      <p>And in case the receipient is wondering why the email never got delivered. Remind them to check their Spam folder.</p>
+
       <div style={style.form}>
         <Form />
       </div>      
