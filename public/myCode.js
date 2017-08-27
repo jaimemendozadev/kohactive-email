@@ -11905,7 +11905,7 @@ var App = function App() {
     _react2.default.createElement(
       'p',
       null,
-      'SimplySendIt is an app that allows you to send an email to anyone in the  world!'
+      'Simply Send It is an app that allows you to send an email to anyone in the  world!'
     ),
     _react2.default.createElement(
       'p',

@@ -21,8 +21,6 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "mailgun-js": "^0.13.1",
-    "nodemailer": "^4.0.1",
-    "nodemon": "^1.11.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-materialize": "^1.0.10",
@@ -34,5 +32,8 @@
       "es2015",
       "react"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

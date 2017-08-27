@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <h1>Simply Send It!</h1>
       
-      <p>SimplySendIt is an app that allows you to send an email to anyone in the  world!</p>  
+      <p>Simply Send It is an app that allows you to send an email to anyone in the  world!</p>  
 
       <p>You don't even need to signup for an email account. We'll send the message on your  behalf using our custom domain!</p>  
 
