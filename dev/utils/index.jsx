@@ -12,7 +12,7 @@ const entityMap = {
   '=': '&#x3D;'
 };
 
-function escapeHtml (string) {
+function escapeHtml(string) {
   return String(string).replace(/[&<>"'`=\/]/g, function (s) {
     return entityMap[s];
   });
@@ -20,47 +20,37 @@ function escapeHtml (string) {
 
 
 function sentBy(event){
-
-  var sanitizedInput = escapeHtml(event.target.value);
-
   this.setState({
-    fromEmail: sanitizedInput
+    fromEmail: event.target.value
   });
 }
 
 function sendTo(event){
-  var sanitizedInput = escapeHtml(event.target.value);
   this.setState({
-    toEmail: sanitizedInput
+    toEmail: event.target.value
   });
 }
 
 function subjectLine(event){
-  var sanitizedInput = escapeHtml(event.target.value);
   this.setState({
-    subject: sanitizedInput
+    subject: event.target.value
   });
 }
 
 function content(event){
-  var sanitizedInput = escapeHtml(event.target.value);
-
-  console.log("sanitizedInput is ", sanitizedInput)
   this.setState({
-    content: sanitizedInput
+    content: event.target.value
   });
-
-  console.log("the state of content is ", this.state.content);
 }
 
 function handleSubmit(event){
   event.preventDefault();
 
   const message = {
-    FROM: this.state.fromEmail,
-    TO: this.state.toEmail,
-    SUBJECT: this.state.subject,
-    CONTENT: this.state.content
+    FROM: escapeHtml(this.state.fromEmail),
+    TO: escapeHtml(this.state.toEmail),
+    SUBJECT: escapeHtml(this.state.subject),
+    CONTENT: escapeHtml(this.state.content)
   }
 
   console.log("the formatted message is ", message);
