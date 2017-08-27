@@ -8,33 +8,30 @@ const options = {
 const domain = process.env.SPARKPOST_DOMAIN;
 const client = new SparkPost(process.env.SPARKPOST_API_KEY, options);
 
-const viaSparkPost = (req, res)=> {
-    
-  //req will be an obj with key/value pairs
-  var fromEmail = `${req.body.FROM}@${domain}`; 
-  var toEmail = req.body.TO; 
-  var subject = req.body.SUBJECT; 
-  var content = req.body.CONTENT;
+const viaSparkPost = (emailObj, res)=> {
+
+  var SPFromEmail = `${emailObj.from}@${domain}`; 
 
   client.transmissions.send({
     content: {
-      from: fromEmail,
-      subject: subject,
-      text: content
+      from: SPFromEmail,
+      subject: emailObj.subject,
+      html: emailObj.html
     },
     recipients: [
-      {address: toEmail}
+      {address: emailObj.to}
     ]
   })
   .then(data => {
     console.log('Woohoo! You just sent your first mailing!');
     console.log(data);
-    res.send("Message successfully sent.");
+    res.end();
+
   })
   .catch(err => {
     console.log('Whoops! Something went wrong');
     console.log(err);
-    res.send("There was an error sending the message.");
+    res.end();
   });
     
 }

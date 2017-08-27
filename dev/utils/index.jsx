@@ -1,28 +1,56 @@
 import axios from 'axios';
 const apiURL = 'http://localhost:3000/api/email';
 
+const entityMap = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+};
+
+function escapeHtml (string) {
+  return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+    return entityMap[s];
+  });
+}
+
+
 function sentBy(event){
+
+  var sanitizedInput = escapeHtml(event.target.value);
+
   this.setState({
-    fromEmail: event.target.value
+    fromEmail: sanitizedInput
   });
 }
 
 function sendTo(event){
+  var sanitizedInput = escapeHtml(event.target.value);
   this.setState({
-    toEmail: event.target.value
+    toEmail: sanitizedInput
   });
 }
 
 function subjectLine(event){
+  var sanitizedInput = escapeHtml(event.target.value);
   this.setState({
-    subject: event.target.value
+    subject: sanitizedInput
   });
 }
 
 function content(event){
+  var sanitizedInput = escapeHtml(event.target.value);
+
+  console.log("sanitizedInput is ", sanitizedInput)
   this.setState({
-    content: event.target.value
+    content: sanitizedInput
   });
+
+  console.log("the state of content is ", this.state.content);
 }
 
 function handleSubmit(event){
