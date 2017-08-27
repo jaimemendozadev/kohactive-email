@@ -6,7 +6,7 @@ const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 const viaMailGun = (req, res)=> {
     
   //req will be an obj with key/value pairs
-  var fromEmail = req.body.FROM; 
+  var fromEmail = `${req.body.FROM}@${domain}`;
   var toEmail = req.body.TO; 
   var subject = req.body.SUBJECT; 
   var content = req.body.CONTENT;
