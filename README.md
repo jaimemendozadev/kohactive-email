@@ -59,7 +59,9 @@ After creating the `.env` and you fire up the app, you can use `process.env` in 
 
 ## Starting the App
 
-In the root of the app, run the following command in your terminal: `$ npm start`
+In the root of the app, run `$ npm install` to install all the app dependencies. Wait until everything finishes loading.
+
+Run the `$ npm start` command in your terminal to start the app.
 
 Go to `http://localhost:3000` in your favorite browser to start using the app. 
 
