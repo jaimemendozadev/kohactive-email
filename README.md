@@ -7,6 +7,7 @@ You don't even need to signup for an email account. We'll send the message on yo
 
 All you have to do is enter your name in the <em>From</em> field and we'll handle the rest!
 
+You can view a live demo of the app on [Heroku](https://simply-send.herokuapp.com/).
 
 ## Table of contents
 
