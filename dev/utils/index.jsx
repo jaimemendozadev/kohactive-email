@@ -1,5 +1,5 @@
 import axios from 'axios';
-const apiURL = 'http://localhost:3000/api/email';
+const apiURL = '/api/email';
 
 const entityMap = {
   '&': '&amp;',
