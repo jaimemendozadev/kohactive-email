@@ -53,7 +53,7 @@ There should be no spacing between the lines and do not end the line with punctu
   
 ![.env Screenshot](/img/env-screen-shot.png?raw=true ".env Screenshot ")  
 
-After creating the `.env` and you fire up the app, you can use `process.env` in `const` declarations to access your API keys in the `mailers/mail.js` and `mailers/spark-post.js` files for making API calls.   
+After creating the `.env` and you fire up the app, you can use `process.env` in `const` declarations to access your API keys in the `mailers/mailgun.js` and `mailers/spark-post.js` files for making API calls.   
 
 
 ## Starting the App
